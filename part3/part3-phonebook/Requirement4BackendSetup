@@ -1,0 +1,6 @@
+1. npm install
+2. npm init
+3. npm install express
+4. insert "start": "node index.js" into package.json into the scripts section
+5. npm install --save-dev nodemon  for auto restart server during changes
+6. add  "dev": "nodemon index.js" in package.json in teh scripts section

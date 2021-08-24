@@ -1,0 +1,15 @@
+
+GET http://localhost:3001/api/notes 
+###
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+    "content": "VS Code REST client is pretty good",
+    "important": false
+}
+//### annotation for adding a new send request in this rest api
+###
+DELETE http://localhost:3001/api/notes/1
+//same as postman test but only can do one command line at a time!!!
+

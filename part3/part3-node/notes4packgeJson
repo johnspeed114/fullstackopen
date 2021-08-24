@@ -1,0 +1,4 @@
+Notes
+-Nodemon is help to refresh the page without the need to keep restarting the server when changes occur
+-devDependencies mean that tools that only needed for development of the application(testing and restarting app like Nodemon)
+-use npm run dev instead of npm start, so you don't need to restart the server
