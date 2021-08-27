@@ -3,7 +3,20 @@
 const express = require('express') //No need for http import since express module give you all the needs of that
 const app = express()
 
+
 app.use(express.json()) //need to add the express json-parser for the HTTP POST to work
+// above is a mddileware executed to handling request and response object
+const requestLogger = (request, response, next) => {//logs all the requests that happens each time
+  console.log('Method: ', request.method)//http method like get/post/put
+  console.log('Path: ', request.path)//location of url resource
+  console.log('Body: ', request.body)//content of the request
+  console.log('---')
+  next() //this function here is to pass to the next middleware for control
+}
+
+app.use(requestLogger);
+
+
 
 let notes = [
   {
@@ -90,6 +103,11 @@ app.post('/api/notes', (request, response) => {
   notes = notes.concat(note)
   response.json(note)
 }) //remember to use json and raw for postman testing
+
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({error: 'unknown endpoint'})
+}
+app.use(unknownEndpoint)
 
 const PORT = 3001
 app.listen(PORT)

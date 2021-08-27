@@ -3,6 +3,18 @@ const app = express()
 
 app.use(express.json())
 
+const morgan = require('morgan')
+
+
+morgan.token('postData', function(res) { // this part will be added if this condition of POST matched and so showing in console log
+//this postData added logger with this custom token function
+  if (res.method === 'POST') {
+    return JSON.stringify(res.body)
+  } else {return ''}
+})
+
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :postData'))
+//here we put the tiny format manually bcz custom token(postData) will not work with it
 let persons = [
   {
     id: 1,

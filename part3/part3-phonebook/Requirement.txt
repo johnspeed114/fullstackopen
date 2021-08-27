@@ -1,0 +1,8 @@
+[x] Install morgan
+[] Should log HTTP request messages to console based on tiny configuration
+[] Should show data sent in HTTP POST requests all the contents there!
+
+REACT-DEV-SERVER meaning
+ The browser gets the JavaScript from the React dev server, which is the application that runs after running the command npm start. 
+ The dev-server transforms the JavaScript into a format understood by the browser. 
+ Among other things, it stitches together JavaScript from different files into one file. We'll discuss the dev-server in more detail in part 7 of the course.
